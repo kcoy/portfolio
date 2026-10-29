@@ -7,7 +7,7 @@ export const site = {
   name: "Kevin Coy",
   role: "Product Designer (UX/UI)",
   focus: "SaaS · AI-Driven Experiences",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kevincoy.design",
   email: "kcoy.design@gmail.com",
   linkedin: "https://www.linkedin.com/in/kevincoy",
   linkedinLabel: "linkedin.com/in/kevincoy",

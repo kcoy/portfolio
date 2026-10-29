@@ -39,7 +39,7 @@ To promote a "Recent practice" entry (SportsEngine, AI workflow) to a full case 
 Dashboard settings (Pages → portfolio-kc → Settings → Build):
 
 - Build command: `npm run build`
-- Environment variable: `NEXT_PUBLIC_SITE_URL=https://kevincoy.design` (canonical URLs, sitemap, Open Graph links)
+- Site URL defaults to `https://kevincoy.design` (`src/content/site.ts`); override with `NEXT_PUBLIC_SITE_URL` if the domain changes
 
 Preview the production build locally: `npm run build && npx wrangler pages dev` (http://localhost:8788).
 
