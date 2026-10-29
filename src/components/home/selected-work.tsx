@@ -317,7 +317,7 @@ function Stage({ project, n }: { project: Project; n: number }) {
               data-cursor="View"
               tabIndex={-1}
               aria-hidden
-              className="group block overflow-hidden rounded-[12px] shadow-[0_40px_80px_-40px_rgba(0,0,0,.8)] ring-1 ring-white/10"
+              className="group block overflow-hidden rounded-[12px] shadow-[0_40px_80px_-40px_rgba(0,0,0,.8)]"
             >
               <Image
                 src={(project.showcase[0] ?? project.cover).src}
