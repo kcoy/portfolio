@@ -84,19 +84,12 @@ export async function Footer() {
 
         <div className="mt-20 flex flex-col justify-between gap-3 text-xs text-paper/40 sm:flex-row">
           <p>
-            © {year} {site.name}. Built with Next.js.
+            © {year} {site.name}.
           </p>
           <a href="#main" className="link-u self-start sm:self-auto">
             Back to top ↑
           </a>
         </div>
-      </div>
-
-      <div
-        aria-hidden
-        className="pointer-events-none select-none whitespace-nowrap pb-2 text-center text-[24vw] font-semibold leading-[0.75] tracking-[-0.07em] text-paper/[.04]"
-      >
-        Kevin Coy
       </div>
     </footer>
   );
