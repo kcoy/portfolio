@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { site } from "@/content/site";
+import logo from "@/assets/kc-logo.png";
 
 const links = [
   { href: "/", label: "Home" },
@@ -87,11 +89,14 @@ export function Nav() {
             <Link
               href="/"
               onClick={(e) => toTopIfCurrent(e, "/")}
-              className={`group relative z-[70] flex items-baseline gap-2 transition-colors duration-500 ${open ? "text-paper" : ""}`}
+              className={`group relative z-[70] flex items-center gap-2.5 transition-colors duration-500 ${open ? "text-paper" : ""}`}
               aria-label={`${site.name} — home`}
             >
-              <span className="text-[0.95rem] font-semibold tracking-[-0.02em]">Kevin Coy</span>
-              <span className="eyebrow hidden opacity-55 sm:inline">Product Designer</span>
+              <Image src={logo} alt="" width={26} height={26} preload className="h-[26px] w-[26px] shrink-0" />
+              <span className="flex items-baseline gap-2">
+                <span className="text-[0.95rem] font-semibold tracking-[-0.02em]">Kevin Coy</span>
+                <span className="eyebrow hidden opacity-55 sm:inline">Product Designer</span>
+              </span>
             </Link>
 
             <ul className="hidden items-center gap-1 md:flex">
