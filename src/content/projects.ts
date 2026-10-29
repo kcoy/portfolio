@@ -374,7 +374,7 @@ const scorekeeperFilm: Film = {
   poster: "/work/sportngin/scorekeeper-poster.jpg",
   aspect: "852 / 480",
   alt: "Sport Ngin Scorekeeper Hockey on an iPad: signing in, picking the goalie from the roster, setting clock format and live-update options, then scoring a game — start play, goal, choose the scorer and assists, penalty — with web sync on.",
-  caption: "Scorekeeper Hockey, Sport Ngin's iPad app for scoring games rinkside. UX design and video production by me. 57 seconds, with sound.",
+  caption: "Scorekeeper Hockey, Sport Ngin's iPad app for scoring games rinkside. UX design assistance and video production by me. 57 seconds, with sound.",
 };
 
 const sportngin: Project = {
@@ -383,11 +383,11 @@ const sportngin: Project = {
   client: "Sport Ngin (now SportsEngine, NBC Sports)",
   tagline: "Live game scoring on the iPad, for a sports SaaS platform used by 500,000+ people.",
   year: "2013–2014",
-  role: "User Experience Designer — Scorekeeper UX and video production",
+  role: "User Experience Designer — Scorekeeper UX design assistance and video production",
   disciplines: ["SaaS", "Mobile UX", "Video"],
   platform: "iPad app · web platform",
   intro:
-    "Sport Ngin's platform ran websites, registration and game scoring for leagues, clubs and tournaments — SaaS serving 500,000+ users across web and mobile. I designed UX for it: wireframes, prototypes and production-ready UI, with a focus on reducing onboarding friction. For Scorekeeper Hockey, the platform's iPad app for scoring games rinkside, I designed the UX and produced the product video.",
+    "Sport Ngin's platform ran websites, registration and game scoring for leagues, clubs and tournaments — SaaS serving 500,000+ users across web and mobile. I designed UX for it: wireframes, prototypes and production-ready UI, with a focus on reducing onboarding friction. For Scorekeeper Hockey, the platform's iPad app for scoring games rinkside, I assisted with the UX design and produced the product video.",
   theme: { ground: "#1f232c", ink: "#eef1f5", accent: "#2ba3d4" },
   outcome: {
     label: "Prototyping",
