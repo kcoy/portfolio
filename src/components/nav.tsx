@@ -93,7 +93,7 @@ export function Nav() {
               aria-label={`${site.name} — home`}
             >
               <Image src={logo} alt="" width={26} height={26} preload className="h-[26px] w-[26px] shrink-0" />
-              <span className="flex items-baseline gap-2.5">
+              <span className="flex items-baseline gap-3">
                 <span className="text-[0.95rem] font-semibold tracking-[-0.02em]">Kevin Coy</span>
                 <span className="eyebrow hidden opacity-55 sm:inline">Product Designer</span>
               </span>
