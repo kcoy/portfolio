@@ -360,9 +360,8 @@ function Stage({ project, n }: { project: Project; n: number }) {
   );
 }
 
-/* 07 — Reel: product film loop on a dark stage, web screens beneath */
+/* 07 — Reel: the product film, looping silently on a dark stage */
 function Reel({ project, n }: { project: Project; n: number }) {
-  const [a, b] = project.showcase;
   return (
     <article
       className="overflow-hidden py-[clamp(4rem,9vw,8rem)]"
@@ -383,12 +382,12 @@ function Reel({ project, n }: { project: Project; n: number }) {
             </Reveal>
           )}
         </div>
-        <div className="lg:col-span-8">
-          {project.reel && (
+        {project.reel && (
+          <div className="lg:col-span-8 lg:self-center">
             <ClipReveal>
               <Link
                 href={`/work/${project.slug}`}
-                data-cursor="View"
+                data-cursor="Watch"
                 tabIndex={-1}
                 aria-hidden
                 className="block overflow-hidden rounded-[12px] shadow-[0_40px_80px_-40px_rgba(0,0,0,.8)] ring-1 ring-white/10"
@@ -396,15 +395,15 @@ function Reel({ project, n }: { project: Project; n: number }) {
                 <Film film={project.reel} loop />
               </Link>
             </ClipReveal>
-          )}
-          <div className="mt-[clamp(1rem,3vw,2rem)] grid grid-cols-2 gap-[clamp(0.75rem,2vw,1.5rem)]">
-            {[a, b].map((m, i) => (
-              <Reveal key={i} delay={i * 0.1} y={40} className={i === 1 ? "mt-[clamp(1.5rem,5vw,4rem)]" : ""}>
-                <Frame project={project} media={m} sizes="(min-width:1024px) 30vw, 48vw" className="overflow-hidden rounded-[8px]" />
-              </Reveal>
-            ))}
+            <Link
+              href={`/work/${project.slug}`}
+              className="group mt-5 inline-flex items-center gap-3 text-[0.95rem] opacity-80 hover:opacity-100"
+            >
+              <span aria-hidden className="grid h-8 w-8 place-items-center rounded-full border border-current/30 text-[0.7rem]">▶</span>
+              <span className="link-u">Watch the full film, with sound</span>
+            </Link>
           </div>
-        </div>
+        )}
       </div>
     </article>
   );
@@ -433,7 +432,7 @@ export function SelectedWork() {
           <Reveal className="self-end lg:col-span-4">
             <p className="max-w-[38ch] text-paper/65">
               My own AI product, enterprise support, sports SaaS, e-commerce and multi-brand work —
-              shown through real screens, prototypes and film. AI workflow practice follows below.
+              shown through real product screens and film. AI workflow practice follows below.
             </p>
             <p className="eyebrow mt-6 text-paper/40">
               {projects.length} projects · {projects.at(-1)!.year.slice(0, 4)}–{/present/i.test(projects[0].year) ? "Now" : projects[0].year.slice(-4)}

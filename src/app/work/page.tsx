@@ -19,7 +19,7 @@ export default function WorkPage() {
           </h1>
           <Reveal delay={0.2} className="self-end lg:col-span-3">
             <p className="text-ink-2">
-              Case studies built from the screens that shipped. Recent enterprise and AI work is
+              Case studies built from real product screens and film. My AI workflow practice is
               listed below.
             </p>
           </Reveal>

@@ -37,13 +37,7 @@ import cjClose from "@/assets/work/clientjam/cj-close.png";
 import cjTileEmail from "@/assets/work/clientjam/cj-tile-email.png";
 import cjTilePackage from "@/assets/work/clientjam/cj-tile-package.png";
 import cjTileAi from "@/assets/work/clientjam/cj-tile-ai.png";
-import snSettings from "@/assets/work/sportngin/sn-settings.jpg";
-import snVenuesEmpty from "@/assets/work/sportngin/sn-venues-empty.jpg";
-import snVenuesAdd from "@/assets/work/sportngin/sn-venues-add.jpg";
-import snVenuesSearch from "@/assets/work/sportngin/sn-venues-search.jpg";
-import snVenuesAdded from "@/assets/work/sportngin/sn-venues-added.jpg";
-import snRegFlow from "@/assets/work/sportngin/sn-reg-flow.jpg";
-import snRegEmpty from "@/assets/work/sportngin/sn-reg-empty.jpg";
+import snPoster from "@/assets/work/sportngin/scorekeeper-poster.jpg";
 import hx1 from "@/assets/work/helix/helix-1.png";
 import hx2 from "@/assets/work/helix/helix-2.png";
 import hx3 from "@/assets/work/helix/helix-3.png";
@@ -122,6 +116,8 @@ export type Project = {
   };
   /** Only outcomes verified in the résumé */
   outcome?: { label: string; value: string; note: string };
+  /** Plays in place of the cover image at the top of the case study */
+  film?: Film;
   /** Muted loop shown on the homepage feature, if any */
   reel?: Film;
   /** Large serif line set under the homepage feature, if any */
@@ -376,7 +372,7 @@ const helix: Project = {
 const scorekeeperFilm: Film = {
   src: "/work/sportngin/scorekeeper.mp4",
   poster: "/work/sportngin/scorekeeper-poster.jpg",
-  aspect: "872 / 480",
+  aspect: "852 / 480",
   alt: "Sport Ngin Scorekeeper Hockey on an iPad: signing in, picking the goalie from the roster, setting clock format and live-update options, then scoring a game — start play, goal, choose the scorer and assists, penalty — with web sync on.",
   caption: "Scorekeeper Hockey, Sport Ngin's iPad app for scoring games rinkside. 57 seconds, with sound.",
 };
@@ -385,13 +381,13 @@ const sportngin: Project = {
   slug: "sportngin",
   title: "Sport Ngin",
   client: "Sport Ngin (now SportsEngine, NBC Sports)",
-  tagline: "Tournament management on the web and live scoring on the iPad, for a sports SaaS platform.",
+  tagline: "Live game scoring on the iPad, for a sports SaaS platform used by 500,000+ people.",
   year: "2013–2014",
   role: "User Experience Designer",
-  disciplines: ["SaaS", "Workflow UX", "Prototyping"],
-  platform: "Web admin · iPad app",
+  disciplines: ["SaaS", "Mobile", "Prototyping"],
+  platform: "iPad app · web platform",
   intro:
-    "Sport Ngin's platform ran websites, registration and game scoring for leagues, clubs and tournaments — SaaS serving 500,000+ users across web and mobile. I designed UX for it: wireframes, prototypes and production-ready UI, with a focus on reducing onboarding friction. These are tournament-management prototypes from the admin, the registration flow behind them, and the iPad scorekeeping app.",
+    "Sport Ngin's platform ran websites, registration and game scoring for leagues, clubs and tournaments — SaaS serving 500,000+ users across web and mobile. I designed UX for it: wireframes, prototypes and production-ready UI, with a focus on reducing onboarding friction. This is Scorekeeper Hockey, the platform's iPad app for scoring games rinkside.",
   theme: { ground: "#1f232c", ink: "#eef1f5", accent: "#2ba3d4" },
   outcome: {
     label: "Prototyping",
@@ -399,115 +395,33 @@ const sportngin: Project = {
     note: "fewer revision cycles, from rapid prototyping",
   },
   cover: {
-    src: snVenuesAdded,
-    alt: "Tournament admin with the Add Venues modal open: five rinks listed with subvenue counts and lights, a venue search field, Advanced Search and Add Venues.",
+    src: snPoster,
+    alt: "Scorekeeper Hockey on an iPad: the live scoreboard with Goal, Penalty and Save buttons on both sides, the game clock at 19:12 and a Start Play button.",
   },
-  showcase: [
-    {
-      src: snVenuesAdded,
-      alt: "Add Venues modal listing five rinks with subvenue counts and lights, above a venue search field.",
-    },
-    {
-      src: snVenuesSearch,
-      alt: "Advanced venue search: filters for name, location, sport, age range, lights and sort order beside selectable results.",
-    },
-  ],
+  film: scorekeeperFilm,
+  showcase: [],
   reel: {
     src: "/work/sportngin/scorekeeper-loop.mp4",
     poster: "/work/sportngin/scorekeeper-loop-poster.jpg",
-    aspect: "872 / 480",
+    aspect: "852 / 480",
     alt: "Scorekeeper Hockey on an iPad: the live scoreboard, logging a goal and choosing the assist.",
   },
   blocks: [
     {
       type: "text",
       kicker: "The platform",
-      heading: "A tournament is an operations job.",
+      heading: "Someone at every game has to keep score.",
       body: [
-        "Before a puck drops, a tournament director has to define the event, its structure and rules, the rinks it plays in, how teams and players register, the schedule and the officials. Once it starts, someone at every game has to keep score.",
-        "Sport Ngin covered both ends: a web admin for running the event, and an iPad app for the bench.",
-      ],
-    },
-    {
-      type: "video",
-      kicker: "Rinkside",
-      heading: "Scorekeeper: the game, on an iPad.",
-      body: "Goal, penalty and save get the biggest buttons on the screen, the game clock sits dead center, and with web sync on, plays are posted to the web as they're logged.",
-      film: scorekeeperFilm,
-    },
-    {
-      type: "text",
-      kicker: "The admin",
-      heading: "One tab per job.",
-      body: [
-        "Each part of running a tournament gets its own tab. Inside a tab, changes are applied together, with a single undo for all of them, and publishing to the public site is its own separate button.",
-      ],
-    },
-    {
-      type: "image",
-      size: "wide",
-      media: {
-        src: snSettings,
-        alt: "Tournament settings: Overview, Format, Game Limits and Standings Rules sub-tabs; Undo All Changes and Apply Settings; tournament details with field hints such as Max 20 char; When & Where section.",
-        caption:
-          "Settings, split into overview, format, game limits and standings rules. Field hints state each limit up front.",
-      },
-    },
-    {
-      type: "gallery",
-      heading: "Adding venues",
-      items: [
-        {
-          src: snVenuesEmpty,
-          alt: "Venues tab empty state: No venues have been selected for this tournament, with an Add Venues button.",
-          caption: "1 — An empty state with one job and one button.",
-        },
-        {
-          src: snVenuesAdd,
-          alt: "Add Venues modal: Bradley Center and Staples Center listed with subvenues and lights, a Venue Name or Address field, Advanced Search, Cancel and Add Venues.",
-          caption: "2 — Type a name or address; each venue shows what a director cares about: subvenues and lights.",
-        },
-        {
-          src: snVenuesSearch,
-          alt: "Advanced Search modal: filters for name, location, sport (Ice Hockey), min and max age, has lights and sort by, with three selected results.",
-          caption: "3 — Don't know the rink? Search by location, sport, age and lights, and pick several at once.",
-        },
-        {
-          src: snVenuesAdded,
-          alt: "Add Venues modal now listing five venues, each removable, with the search field ready for another.",
-          caption: "4 — Back in the list with five venues, each removable before adding.",
-        },
+        "Sport Ngin ran leagues and tournaments end to end, from registration to published results. At the rink, that came down to one person with an iPad logging the game as it happened.",
       ],
     },
     {
       type: "text",
-      kicker: "Registration",
-      heading: "Map who registers before drawing a screen.",
+      kicker: "Scorekeeper",
+      heading: "The game, on an iPad.",
       body: [
-        "Registration touches three people: the tournament director who turns it on, the team manager or coach who registers a team, and the player or parent who registers themselves. The flow chart maps who starts where, in which steps, and how a team's email invites hand off to its players.",
-      ],
-    },
-    {
-      type: "pair",
-      items: [
-        {
-          src: snRegFlow,
-          alt: "Registration flow chart: Sport Admin side with the Tournament Director's Registration tab and Publish to Microsite; Registration Site side with separate step lists for Team Manager or Coach and for Player or Parent, linked by Email Invites.",
-          caption: "The flow: one admin path, two registration paths, joined by email invites.",
-        },
-        {
-          src: snRegEmpty,
-          alt: "Registration tab for NHL Stanley Cup 2013: No registration has been created for this tournament, with a Request Online Registration button.",
-          caption: "Its first screen in the admin: one action to start.",
-        },
-      ],
-    },
-    {
-      type: "text",
-      kicker: "How it was built",
-      heading: "Prototype in the browser.",
-      body: [
-        "These screens are HTML prototypes rather than static mockups — pages that open in a browser, with working tabs and modals. Rapid prototyping cut revision cycles by about 25%.",
+        "Goal, penalty and save get the biggest buttons on the screen, and the game clock sits dead center. Logging a goal means picking the scorer and assists straight from the roster. With web sync on, plays are posted to the web as they're logged.",
+        "Before a game starts, the scorekeeper sets the clock format and chooses what to track: shots, play locations, live game updates.",
       ],
     },
   ],

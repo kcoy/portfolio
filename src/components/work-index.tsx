@@ -23,7 +23,7 @@ export function WorkIndex({ projects }: { projects: Project[] }) {
               }`}
             >
               <span className="eyebrow col-span-2 text-ink-2 sm:col-span-1">{String(i + 1).padStart(2, "0")}</span>
-              <span className="display col-span-10 text-[clamp(2.5rem,7.5vw,7rem)] transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:translate-x-2 sm:col-span-7">
+              <span className="display col-span-10 text-[clamp(2.5rem,6.6vw,6.25rem)] transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:translate-x-2 sm:col-span-7">
                 {p.title}
               </span>
               <span className="col-span-10 col-start-3 text-sm text-ink-2 sm:col-span-3 sm:col-start-auto">

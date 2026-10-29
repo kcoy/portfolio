@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getNeighbors, getProject, projects } from "@/content/projects";
 import { Blocks } from "@/components/case/blocks";
 import { Shot } from "@/components/shot";
+import { Film } from "@/components/film";
 import { Reveal, SplitLines } from "@/components/reveal";
 
 export function generateStaticParams() {
@@ -75,14 +76,27 @@ export default async function CaseStudy(props: PageProps<"/work/[slug]">) {
         style={{ background: p.theme.ground }}
       >
         <div className="clip-up wrap max-w-[82rem]" style={{ animationDelay: "0.3s" }}>
-          <div className="rounded-[10px]" style={{ boxShadow: p.theme.glow }}>
-            <Shot
-              media={p.cover}
-              preload
-              showCaption={false}
-              sizes="(min-width: 1280px) 1200px, 100vw"
-            />
-          </div>
+          {p.film ? (
+            <figure>
+              <div className="overflow-hidden rounded-[10px] ring-1 ring-white/10">
+                <Film film={p.film} />
+              </div>
+              {p.film.caption && (
+                <figcaption className="mt-4 max-w-[52ch] text-[0.9rem] leading-relaxed" style={{ color: p.theme.ink, opacity: 0.6 }}>
+                  {p.film.caption}
+                </figcaption>
+              )}
+            </figure>
+          ) : (
+            <div className="rounded-[10px]" style={{ boxShadow: p.theme.glow }}>
+              <Shot
+                media={p.cover}
+                preload
+                showCaption={false}
+                sizes="(min-width: 1280px) 1200px, 100vw"
+              />
+            </div>
+          )}
         </div>
       </div>
 
