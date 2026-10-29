@@ -89,7 +89,9 @@ export function Hero() {
         <div
           className="clip-up lg:col-span-7"
           style={{ animationDelay: "0.45s" }}
-          onPointerEnter={() => setHover(true)}
+          // Only a mouse pauses on hover: on phones a touch counts as "enter" and the matching
+          // "leave" doesn't reliably follow, which left the slideshow stuck paused.
+          onPointerEnter={(e) => e.pointerType === "mouse" && setHover(true)}
           onPointerLeave={() => setHover(false)}
         >
           <Link
