@@ -82,9 +82,10 @@ export async function Footer() {
           </nav>
         </div>
 
-        <div className="mt-20 flex flex-col justify-between gap-3 text-xs text-paper/40 sm:flex-row">
-          <p>
-            © {year} {site.name}.
+        <div className="mt-20 flex flex-col justify-between gap-3 text-xs text-paper/40 sm:flex-row sm:items-baseline">
+          <p className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <span>© {year} {site.name}.</span>
+            <span className="serif-i text-[0.95rem] text-accent">Thoughtfully designed. Intentionally built.</span>
           </p>
           <a href="#main" className="link-u self-start sm:self-auto">
             Back to top ↑
