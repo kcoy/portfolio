@@ -3,6 +3,8 @@ import { ImageResponse } from "next/og";
 export const alt = "Kevin Coy — Product Designer (UX/UI)";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+// Required by output: "export".
+export const dynamic = "force-static";
 
 export default function OG() {
   return new ImageResponse(

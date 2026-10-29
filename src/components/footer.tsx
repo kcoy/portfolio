@@ -5,7 +5,6 @@ import { Magnetic } from "./magnetic";
 import { SplitLines } from "./reveal";
 
 async function currentYear() {
-  "use cache";
   return new Date().getFullYear();
 }
 

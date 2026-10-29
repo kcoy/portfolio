@@ -1,0 +1,12 @@
+// Cloudflare Workers config. The site is a static export (next build → out/),
+// so the Worker only serves files; there is no server code.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
