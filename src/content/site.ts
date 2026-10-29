@@ -147,7 +147,7 @@ export const approach = [
   "Agile / Scrum",
   "Cross-functional teams",
   "Stakeholder alignment",
-  "Design thinking",
+  "Iterative prototyping",
 ];
 
 export const education = {
