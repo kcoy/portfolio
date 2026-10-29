@@ -11,7 +11,7 @@ export default function NotFound() {
         This page doesn&apos;t exist — or it moved during a redesign. It happens to the best of us.
       </p>
       <div className="mt-10 flex flex-wrap gap-3">
-        <Link href="/" className="rounded-full bg-ink px-6 py-4 text-paper hover:bg-accent">Back home</Link>
+        <Link href="/" className="rounded-full bg-ink px-6 py-4 text-paper hover:bg-accent hover:text-ink">Back home</Link>
         <Link href="/work" className="rounded-full border border-ink/20 px-6 py-4 hover:border-ink">See the work</Link>
       </div>
     </section>

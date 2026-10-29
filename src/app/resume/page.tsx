@@ -32,7 +32,7 @@ export default function ResumePage() {
             <a
               href={site.resumePdf}
               download
-              className="inline-flex items-center gap-3 rounded-full bg-ink px-6 py-4 text-[0.95rem] font-medium text-paper transition-colors hover:bg-accent"
+              className="inline-flex items-center gap-3 rounded-full bg-ink px-6 py-4 text-[0.95rem] font-medium text-paper transition-colors hover:bg-accent hover:text-ink"
             >
               Download PDF <span aria-hidden>↓</span>
             </a>

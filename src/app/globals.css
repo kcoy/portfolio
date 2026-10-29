@@ -13,8 +13,8 @@
   --color-night: #0e0e0d;
   --color-night-2: #1a1a18;
   --color-fog: #b9b6ad;
-  --color-accent: #2f45ff;
-  --color-accent-soft: #8e9bff;
+  --color-accent: #00bcff;
+  --color-accent-soft: #7fdcff;
 
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
@@ -55,7 +55,7 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-paper);
+  color: var(--color-ink);
 }
 
 :focus-visible {

@@ -10,7 +10,7 @@ export default function Error({ reset }: { error: Error & { digest?: string }; r
         That wasn&apos;t <span className="serif-i text-accent">designed.</span>
       </h1>
       <div className="mt-10 flex flex-wrap gap-3">
-        <button onClick={reset} className="rounded-full bg-ink px-6 py-4 text-paper hover:bg-accent">Try again</button>
+        <button onClick={reset} className="rounded-full bg-ink px-6 py-4 text-paper hover:bg-accent hover:text-ink">Try again</button>
         <Link href="/" className="rounded-full border border-ink/20 px-6 py-4 hover:border-ink">Back home</Link>
       </div>
     </section>

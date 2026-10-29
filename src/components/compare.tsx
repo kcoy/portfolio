@@ -67,7 +67,7 @@ export function Compare({
         <span className="eyebrow pointer-events-none absolute left-3 top-3 bg-ink px-2 py-1 text-paper">
           {labels[0]}
         </span>
-        <span className="eyebrow pointer-events-none absolute right-3 top-3 bg-accent px-2 py-1 text-paper">
+        <span className="eyebrow pointer-events-none absolute right-3 top-3 bg-accent px-2 py-1 text-ink">
           {labels[1]}
         </span>
 

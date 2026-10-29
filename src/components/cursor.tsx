@@ -66,7 +66,7 @@ export function Cursor() {
         {label && (
           <motion.div
             key="c"
-            className="eyebrow flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-center text-paper"
+            className="eyebrow flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-center text-ink"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}

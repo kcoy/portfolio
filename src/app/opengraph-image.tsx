@@ -29,7 +29,7 @@ export default function OG() {
         <div style={{ display: "flex", flexDirection: "column", fontSize: 128, lineHeight: 0.9, letterSpacing: -6, fontWeight: 600 }}>
           <span>Complex systems,</span>
           <span style={{ display: "flex" }}>
-            made&nbsp;<span style={{ color: "#2f45ff", fontStyle: "italic" }}>clear.</span>
+            made&nbsp;<span style={{ color: "#00bcff", fontStyle: "italic" }}>clear.</span>
           </span>
         </div>
         <div style={{ display: "flex", fontSize: 26, color: "#55534e" }}>

@@ -36,7 +36,7 @@ export async function Footer() {
               <Magnetic>
                 <a
                   href={`mailto:${site.email}`}
-                  className="inline-flex items-center gap-3 rounded-full bg-paper px-6 py-4 text-[0.95rem] font-medium text-ink transition-colors hover:bg-accent hover:text-paper"
+                  className="inline-flex items-center gap-3 rounded-full bg-paper px-6 py-4 text-[0.95rem] font-medium text-ink transition-colors hover:bg-accent hover:text-ink"
                 >
                   {site.email}
                   <span aria-hidden>→</span>

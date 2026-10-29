@@ -24,7 +24,7 @@ export function Placeholder({
       className={`hatch flex flex-col justify-between rounded-[6px] border border-dashed border-current/30 p-5 text-current ${className}`}
       style={{ aspectRatio: ratio }}
     >
-      <span className="eyebrow inline-flex w-fit items-center gap-2 bg-accent px-2 py-1 text-paper">
+      <span className="eyebrow inline-flex w-fit items-center gap-2 bg-accent px-2 py-1 text-ink">
         Asset needed
       </span>
       <div>

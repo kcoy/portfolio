@@ -324,7 +324,7 @@ const helix: Project = {
   platform: "Mobile-first web · Oracle Service Cloud",
   intro:
     "Helix implements Oracle Service Cloud for brands with high support volume. I designed the UX of the customer-facing portals and built their front-end components in HTML, CSS, JavaScript and PHP. A help center is used at the worst moment in a customer relationship — an order that didn't arrive, a renewal that failed — so the job is to get people to an answer, or to a person, fast.",
-  theme: { ground: "#dde2ea", ink: "#14171c", accent: "#2f45ff" },
+  theme: { ground: "#dde2ea", ink: "#14171c", accent: "#00bcff" },
   outcome: {
     label: "Task completion",
     value: "~25%",
