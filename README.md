@@ -122,4 +122,4 @@ npm run readme:graphics                               # in another (needs Google
 
 <br>
 
-<p align="center"><sub><img alt="" src="src/assets/kc-logo.png" width="16"><br/><br/> © 2026 Kevin Coy</sub></p>
+<p align="center"><sub><img alt="" src="src/assets/kc-logo.png" width="46"><br/><br/> © 2026 Kevin Coy</sub></p>
