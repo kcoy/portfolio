@@ -103,7 +103,7 @@ export default function ResumePage() {
                       r.title
                     )}
                   </h3>
-                  <p className="text-accent">{r.context}</p>
+                  <p className="font-semibold text-accent">{r.context}</p>
                   <ul className="mt-2 list-disc space-y-1 pl-5 text-ink-2 marker:text-accent">
                     {r.points.map((p) => <li key={p}>{p}</li>)}
                   </ul>
@@ -122,9 +122,9 @@ export default function ResumePage() {
                   </p>
                   <div>
                     <h3 className="text-[1.15rem] font-medium tracking-[-0.02em]">{r.title}</h3>
-                    <p className="text-accent">
+                    <p className="font-semibold text-accent">
                       {r.company}
-                      {r.location && <span className="text-ink-3"> · {r.location}</span>}
+                      {r.location && <span className="font-normal text-ink-3"> · {r.location}</span>}
                     </p>
                     <ul className="mt-2 list-disc space-y-1 pl-5 text-ink-2 marker:text-accent">
                       {r.points.map((p) => <li key={p}>{p}</li>)}
