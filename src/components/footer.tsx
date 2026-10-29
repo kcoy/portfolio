@@ -83,10 +83,10 @@ export async function Footer() {
         </div>
 
         <div className="mt-20 flex flex-col justify-between gap-3 text-xs text-paper/40 sm:flex-row sm:items-baseline">
-          <p className="flex flex-col sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-2">
+          <p className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
             <span>© {year} {site.name}.</span>
-            <span className="serif-i order-first mb-[10px] text-center text-[0.95rem] text-accent sm:order-none sm:mb-0 sm:text-left">
-              Thoughtfully designed. Intentionally built… with{" "}
+            <span className="serif-i text-[0.95rem] text-accent">
+              with{" "}
               <svg
                 role="img"
                 aria-label="love"
