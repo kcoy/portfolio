@@ -84,7 +84,7 @@ export async function Footer() {
 
         <div className="mt-20 flex flex-col justify-between gap-3 text-xs text-paper/40 sm:flex-row sm:items-baseline">
           <p>
-            <span className="text-accent">©</span> {year} {site.name}.
+            <span className="text-accent">©</span> {year} {site.name}
           </p>
           <a href="#main" className="link-u self-start sm:self-auto">
             Back to top ↑
