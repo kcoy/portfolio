@@ -32,7 +32,7 @@ export function Hero() {
         className="eyebrow fade-in flex flex-wrap items-center justify-between gap-3 border-b border-ink/15 pb-4 text-ink-2"
         style={{ animationDelay: "0.2s" }}
       >
-        <span>{site.role}</span>
+        <span>UX/UI</span>
         <span className="hidden sm:inline">{site.focus}</span>
         <span>2004 — Now</span>
       </div>
