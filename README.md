@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kevin Coy — Portfolio
 
-## Getting Started
-
-First, run the development server:
+Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Motion. Statically generated; deploys to Vercel with zero config.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000 — shows "Asset needed" placeholders
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | File |
+| --- | --- |
+| Name, contact, summary, experience, skills | `src/content/site.ts` |
+| Case studies + recent (text-only) work | `src/content/projects.ts` |
+| Project images | `src/assets/work/<slug>/` |
+| Résumé PDF (download) | `public/Kevin-Coy-Resume.pdf` |
+| Design tokens (color, type, easing) | `src/app/globals.css` (`@theme`) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Adding a project
 
-## Learn More
+1. Put images in `src/assets/work/<slug>/` (≥1920px wide preferred).
+2. Import them at the top of `src/content/projects.ts`.
+3. Add a `Project` object and append it to `projects`.
 
-To learn more about Next.js, take a look at the following resources:
+The case-study route, work index, homepage showcase, prev/next links and sitemap all update from that array. Case studies are built from flexible blocks: `text`, `image`, `pair`, `gallery` (horizontal), `compare` (before/after slider), `screens` (portrait phone captures; set `device: "phone"` on the media) and `placeholder`. Homepage layouts are assigned per slug in `selected-work.tsx`. Use as many or as few as the project warrants. The site is static, so new content goes live with the next deploy (a git push on Vercel).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To promote a "Recent practice" entry (SportsEngine, AI workflow) to a full case study, add screenshots and move it from `recent` into `projects`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Placeholders
 
-## Deploy on Vercel
+`<Placeholder>` slots mark missing assets. They render in development and are **omitted from production builds**, so nothing unfinished ships. Preview them in production with `NEXT_PUBLIC_SHOW_PLACEHOLDERS=true`. See `ASSETS-NEEDED.md`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Set `NEXT_PUBLIC_SITE_URL` (e.g. `https://kevincoy.com`) in Vercel so canonical URLs, sitemap and Open Graph links are absolute.
+
+## Motion & accessibility
+
+- Mount animations are CSS (content paints before hydration); scroll reveals use Motion `whileInView`.
+- `prefers-reduced-motion` disables transforms, parallax, the hero slideshow and the magnetic effect.
+- No scroll-jacking: horizontal galleries are native overflow with snap, buttons and keyboard support.
+- The before/after slider is a real range input (arrow keys work). Lightboxes are native `<dialog>`.
+- The custom cursor label is fine-pointer only and never hides the system cursor.
