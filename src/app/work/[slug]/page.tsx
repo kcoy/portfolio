@@ -8,6 +8,13 @@ import { Shot } from "@/components/shot";
 import { Film } from "@/components/film";
 import { Reveal, SplitLines } from "@/components/reveal";
 
+const ogImage = {
+  url: "/opengraph-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Kevin Coy, product designer — landing page: Complex systems, made clear.",
+};
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
@@ -19,7 +26,10 @@ export async function generateMetadata(props: PageProps<"/work/[slug]">): Promis
   return {
     title: p.title,
     description: `${p.tagline} ${p.role}, ${p.year}.`,
-    openGraph: { title: `${p.title} — Kevin Coy`, description: p.tagline },
+    // Setting openGraph here replaces the root one, image included, so point back at the
+    // landing-page screenshot (src/app/opengraph-image.jpg) explicitly.
+    openGraph: { title: `${p.title} — Kevin Coy`, description: p.tagline, images: [ogImage] },
+    twitter: { card: "summary_large_image", images: [ogImage] },
   };
 }
 
