@@ -1,12 +1,8 @@
-// Cloudflare Workers config. The site is a static export (next build → out/),
-// so the Worker only serves files; there is no server code.
+// Cloudflare Pages config (project "portfolio-kc"). The site is a static export:
+// `npm run build` writes out/, and Pages serves it as-is.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "portfolio",
+  "name": "portfolio-kc",
   "compatibility_date": "2026-10-01",
-  "assets": {
-    "directory": "./out",
-    "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page"
-  }
+  "pages_build_output_dir": "./out"
 }

@@ -1,6 +1,6 @@
 # Kevin Coy — Portfolio
 
-Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Motion. Fully static export (`out/`); hosted on Cloudflare.
+Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Motion. Fully static export (`out/`); hosted on Cloudflare Pages.
 
 ```bash
 npm install
@@ -32,19 +32,16 @@ To promote a "Recent practice" entry (SportsEngine, AI workflow) to a full case 
 
 `<Placeholder>` slots mark missing assets. They render in development and are **omitted from production builds**, so nothing unfinished ships. Preview them in production with `NEXT_PUBLIC_SHOW_PLACEHOLDERS=true`. See `ASSETS-NEEDED.md`.
 
-## Deploy (Cloudflare)
+## Deploy (Cloudflare Pages)
 
-`next.config.ts` sets `output: "export"`, so `npm run build` writes plain HTML/CSS/JS to `out/`. Pushing to `main` triggers a Cloudflare build.
+`next.config.ts` sets `output: "export"`, so `npm run build` writes plain HTML/CSS/JS to `out/`. Pushing to `main` triggers a build of the Cloudflare Pages project `portfolio-kc`; the output directory comes from `wrangler.jsonc`.
 
-| Setting | Workers project | Pages project |
-| --- | --- | --- |
-| Build command | `npm run build` | `npm run build` |
-| Deploy command | `npx wrangler deploy` | — |
-| Output directory | (from `wrangler.jsonc`) | `out` |
+Dashboard settings (Pages → portfolio-kc → Settings → Build):
 
-The Worker name in `wrangler.jsonc` (`portfolio`) must match the project name in Cloudflare.
+- Build command: `npm run build`
+- Environment variable: `NEXT_PUBLIC_SITE_URL=https://kevincoy.design` (canonical URLs, sitemap, Open Graph links)
 
-Set the build variable `NEXT_PUBLIC_SITE_URL` (e.g. `https://kevincoy.com`) so canonical URLs, the sitemap and Open Graph links are absolute.
+Preview the production build locally: `npm run build && npx wrangler pages dev` (http://localhost:8788).
 
 Images are served as-is (`images.unoptimized`), so export them at the size they're shown (≤2880px wide).
 
