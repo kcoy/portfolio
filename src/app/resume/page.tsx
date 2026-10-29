@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { approach, capabilities, education, experience, site, summary, tools } from "@/content/site";
 import { recent } from "@/content/projects";
 import { Magnetic } from "@/components/magnetic";
@@ -93,7 +94,15 @@ export default function ResumePage() {
             <div className="space-y-8">
               {recent.map((r) => (
                 <div key={r.title}>
-                  <h3 className="text-[1.15rem] font-medium tracking-[-0.02em]">{r.title}</h3>
+                  <h3 className="text-[1.15rem] font-medium tracking-[-0.02em]">
+                    {r.project ? (
+                      <Link href={`/work/${r.project}`} className="link-u">
+                        {r.title} <span aria-hidden>→</span>
+                      </Link>
+                    ) : (
+                      r.title
+                    )}
+                  </h3>
                   <p className="text-accent">{r.context}</p>
                   <ul className="mt-2 list-disc space-y-1 pl-5 text-ink-2 marker:text-accent">
                     {r.points.map((p) => <li key={p}>{p}</li>)}

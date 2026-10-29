@@ -42,9 +42,9 @@ export function RecentPractice() {
         <h2 id="recent-title" className="display text-[clamp(2.5rem,6vw,6rem)] lg:col-span-9">
           <SplitLines
             lines={[
-              "SaaS platforms",
+              "Designing",
               <>
-                and <span className="serif-i">AI</span> workflows.
+                with <span className="serif-i">AI.</span>
               </>,
             ]}
           />
@@ -52,7 +52,7 @@ export function RecentPractice() {
       </div>
 
       <ol className="mt-[clamp(3rem,6vw,5rem)] border-t border-ink">
-        {recent.map((r, i) => (
+        {recent.filter((r) => !r.project).map((r, i) => (
           <Reveal as="li" key={r.title} className="border-b border-ink/15">
             <div className="grid gap-6 py-10 lg:grid-cols-12 lg:gap-8">
               <p className="eyebrow text-ink-2 lg:col-span-1">0{i + 1}</p>

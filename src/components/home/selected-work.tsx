@@ -5,6 +5,7 @@ import { BrowserFrame } from "../browser-frame";
 import { ClipReveal, Reveal, SplitLines } from "../reveal";
 import { HScroll } from "../hscroll";
 import { Parallax } from "../parallax";
+import { Film } from "../film";
 
 function Frame({
   project,
@@ -359,10 +360,61 @@ function Stage({ project, n }: { project: Project; n: number }) {
   );
 }
 
+/* 07 — Reel: product film loop on a dark stage, web screens beneath */
+function Reel({ project, n }: { project: Project; n: number }) {
+  const [a, b] = project.showcase;
+  return (
+    <article
+      className="overflow-hidden py-[clamp(4rem,9vw,8rem)]"
+      style={{ background: project.theme.ground, color: project.theme.ink }}
+    >
+      <div className="wrap grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <div className="lg:col-span-4 lg:pt-8">
+          <Reveal>
+            <Meta project={project} n={n} light narrow />
+          </Reveal>
+          {project.outcome && (
+            <Reveal delay={0.1} className="mt-12 hidden border-t border-current/20 pt-5 lg:block">
+              <p className="eyebrow opacity-60">{project.outcome.label}</p>
+              <p className="display mt-3 text-[clamp(3.5rem,6vw,6rem)]" style={{ color: project.theme.accent }}>
+                {project.outcome.value}
+              </p>
+              <p className="mt-3 max-w-[26ch] opacity-70">{project.outcome.note}</p>
+            </Reveal>
+          )}
+        </div>
+        <div className="lg:col-span-8">
+          {project.reel && (
+            <ClipReveal>
+              <Link
+                href={`/work/${project.slug}`}
+                data-cursor="View"
+                tabIndex={-1}
+                aria-hidden
+                className="block overflow-hidden rounded-[12px] shadow-[0_40px_80px_-40px_rgba(0,0,0,.8)] ring-1 ring-white/10"
+              >
+                <Film film={project.reel} loop />
+              </Link>
+            </ClipReveal>
+          )}
+          <div className="mt-[clamp(1rem,3vw,2rem)] grid grid-cols-2 gap-[clamp(0.75rem,2vw,1.5rem)]">
+            {[a, b].map((m, i) => (
+              <Reveal key={i} delay={i * 0.1} y={40} className={i === 1 ? "mt-[clamp(1.5rem,5vw,4rem)]" : ""}>
+                <Frame project={project} media={m} sizes="(min-width:1024px) 30vw, 48vw" className="overflow-hidden rounded-[8px]" />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 /** Each project gets the layout that suits its material; unknown slugs rotate. */
 const layoutBySlug: Record<string, typeof BrandBleed> = {
   clientjam: Stage,
   helix: Lineup,
+  sportngin: Reel,
   offerbuys: BrandBleed,
   pricegrabber: Sequence,
   citysearch: Split,
@@ -380,8 +432,8 @@ export function SelectedWork() {
           </h2>
           <Reveal className="self-end lg:col-span-4">
             <p className="max-w-[38ch] text-paper/65">
-              My own AI product, enterprise support, e-commerce and multi-brand work — shown as the
-              actual screens shipped. More SaaS and AI work follows below.
+              My own AI product, enterprise support, sports SaaS, e-commerce and multi-brand work —
+              shown through real screens, prototypes and film. AI workflow practice follows below.
             </p>
             <p className="eyebrow mt-6 text-paper/40">
               {projects.length} projects · {projects.at(-1)!.year.slice(0, 4)}–{/present/i.test(projects[0].year) ? "Now" : projects[0].year.slice(-4)}

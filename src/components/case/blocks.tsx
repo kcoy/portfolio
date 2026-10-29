@@ -1,5 +1,6 @@
 import type { Block } from "@/content/projects";
 import { Shot } from "../shot";
+import { Film } from "../film";
 import { Compare } from "../compare";
 import { HScroll } from "../hscroll";
 import { Placeholder } from "../placeholder";
@@ -150,6 +151,33 @@ function BlockView({ block: b }: { block: Block }) {
               </Reveal>
             ))}
           </div>
+        </section>
+      );
+
+    case "video":
+      return (
+        <section className="bg-night py-[clamp(4rem,9vw,8rem)] text-paper">
+          <div className="wrap grid gap-6 lg:grid-cols-12 lg:gap-8">
+            {b.kicker && <p className="eyebrow pt-2 text-paper/55 lg:col-span-3">{b.kicker}</p>}
+            <Reveal className="lg:col-span-7 lg:col-start-4">
+              <h2 className="text-[clamp(2rem,4.2vw,3.75rem)] font-medium leading-[1.02] tracking-[-0.045em]">
+                {b.heading}
+              </h2>
+              {b.body && <p className="mt-6 max-w-[60ch] text-[1.1rem] leading-relaxed text-paper/70">{b.body}</p>}
+            </Reveal>
+          </div>
+          <ClipReveal className="wrap mt-[clamp(2.5rem,5vw,4rem)] max-w-[82rem]">
+            <figure>
+              <div className="overflow-hidden rounded-[10px] ring-1 ring-white/10">
+                <Film film={b.film} />
+              </div>
+              {b.film.caption && (
+                <figcaption className="mt-4 max-w-[52ch] text-[0.9rem] leading-relaxed text-paper/60">
+                  {b.film.caption}
+                </figcaption>
+              )}
+            </figure>
+          </ClipReveal>
         </section>
       );
 

@@ -24,7 +24,7 @@ npm run build && npm start
 2. Import them at the top of `src/content/projects.ts`.
 3. Add a `Project` object and append it to `projects`.
 
-The case-study route, work index, homepage showcase, prev/next links and sitemap all update from that array. Case studies are built from flexible blocks: `text`, `image`, `pair`, `gallery` (horizontal), `compare` (before/after slider), `screens` (portrait phone captures; set `device: "phone"` on the media) and `placeholder`. Homepage layouts are assigned per slug in `selected-work.tsx`. Use as many or as few as the project warrants. The site is static, so new content goes live with the next deploy (a git push to `main`).
+The case-study route, work index, homepage showcase, prev/next links and sitemap all update from that array. Case studies are built from flexible blocks: `text`, `image`, `pair`, `gallery` (horizontal), `compare` (before/after slider), `screens` (portrait phone captures; set `device: "phone"` on the media), `video` (mp4 + poster in `public/work/<slug>/`) and `placeholder`. Homepage layouts are assigned per slug in `selected-work.tsx`. Use as many or as few as the project warrants. The site is static, so new content goes live with the next deploy (a git push to `main`).
 
 To promote a "Recent practice" entry (SportsEngine, AI workflow) to a full case study, add screenshots and move it from `recent` into `projects`.
 

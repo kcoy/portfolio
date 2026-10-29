@@ -67,6 +67,7 @@ export const experience: Role[] = [
       "Designed UX for SaaS platform serving 500,000+ users across web and mobile",
       "Reduced onboarding friction; rapid prototyping cut revision cycles ~25%",
     ],
+    project: "sportngin",
   },
   {
     title: "Web Designer (Contracts)",
